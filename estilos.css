@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 
-.nav {
+.nav a:hover {
     display: flex;
     justify-content: space-around;
     background-color: #4CAF50;
@@ -12,6 +12,7 @@ body {
 }
 
 .nav a {
+    overflow: hidden;
     color: white;
     text-decoration: none;
 }
@@ -45,8 +46,11 @@ img {
     margin: 0 10px;
 }
 
-.content {
+.content ::after {
     display: flex;
+    content: "";
+    clear: both;
+
 }
 
 .column {
@@ -54,7 +58,9 @@ img {
     padding: 20px;
     border: 1px solid #ccc;
     margin: 10px;
+    float: left;
 }
+
 
 form {
     background-color: #90ff86;
@@ -113,4 +119,10 @@ footer {
   
 .social-media a:hover {
     color: #ff6347; /* Cambia el color al pasar el mouse */
+  }
+
+  .header{
+    background-color: #90ff86;
+    padding: auto;
+    text-align: center;
   }
