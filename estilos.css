@@ -4,11 +4,7 @@ body {
     padding: 0;
 }
 
-
-
-
-
-.nav a:hover {
+.nav {
     display: flex;
     justify-content: space-around;
     background-color: #4CAF50;
