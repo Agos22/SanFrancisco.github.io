@@ -4,6 +4,15 @@ body {
     margin: 0;
     padding: 0;
 }
+.background-page{
+    background-image: url(imagenes/fondo1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    margin: 0;
+
+}
 
 .nav {
     display: flex;
@@ -11,6 +20,7 @@ body {
     background-color: #4CAF50;
     padding: 10px;
 }
+
 
 .nav a {
     overflow: hidden;
