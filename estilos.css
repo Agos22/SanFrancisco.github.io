@@ -4,6 +4,10 @@ body {
     padding: 0;
 }
 
+
+
+
+
 .nav a:hover {
     display: flex;
     justify-content: space-around;
@@ -28,6 +32,20 @@ h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:xx-large;
 }
+h3{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:xx-large;
+}
+ol{
+    background: #cdebc9 ;
+    padding: auto;
+}
+ul{
+    background: #cdebc9;
+    padding: auto;
+}
+
 
 p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

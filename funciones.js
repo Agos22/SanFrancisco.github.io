@@ -1,21 +1,34 @@
-const images = ["imagenes/imagen1.jpg", "imagenes/imagen2.jpg","imagenes/imagen3.jpg" ];
+const images = ["imagenes/imagen1.jpg", "imagenes/imagen2.jpg","imagenes/imagen3.jpg", "imagenes/imagen4.jpg" ];
 let currentIndex = 0;
 
-function showImage(index) {
-    const imgElement = document.getElementById("carouselImage");
-    imgElement.src = images[index];
-}
 
+const carouselImage = document.getElementById("carousel");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+
+nextButton.addEventListener("click", function(){
+nextImage();
+});
+
+
+prevButton.addEventListener("click", function(){
+prevImage();
+})
+
+function updateImage (){
+  carouselImage.src = images[currentIndex];
+}
 function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+  currentIndex = (currentIndex + 1) % images.length;
+  updateImage();
 }
-
 function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateImage();
 }
 
+updateImage();
+//formulario:
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
@@ -25,7 +38,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     
     let errors = [];
     
-    if (name.length === 0 || name.length > 5) {
+    if (name.length === 0 || name.length < 5) {
       errors.push('El nombre es obligatorio y debe tener menos de 5 caracteres.');
     }
     
