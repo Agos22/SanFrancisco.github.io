@@ -29,15 +29,21 @@
         
     </form>
     <div id="formResponse"></div>
-    <script src="funciones.js"></script>
 
-    <h1>!Tu Opinion cuenta¡ Dejanosla</h1>
-    <form>
-        <label for="opinion" id="opi" > Opinion de San Fran:
-            <br>
-             <textarea name="opiniones" id="opiT" rows="10" cols="50"></textarea></label>
-    </form>
+    <h1>¡Tu Opinion cuenta! Dejanosla</h1>
+   <form id="feedbackForm">
+    <label for="opinion" id="opi">
+      Opinión de San Francisco:
+      <br>
+      <textarea name="opiniones" id="opiT" rows="10" cols="50"></textarea>
+    </label>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+  <div class="feedback"></div>
+  <div id="result"></div>
 
+  <script src="funciones.js"></script>
     
 </body>
 </html>
