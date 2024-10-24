@@ -1,21 +1,18 @@
-let indiceImagen = 0;
+const carrusel = document.querySelector('.imagenes');
+const images = document.querySelectorAll('.imagen');
+const prevButton = document.querySelector('.anterior');
+const nextButton = document.querySelector('.siguiente');
+let index = 0;
 
-    function cambiarImagen(direccion) {
-        const imagenes = document.getElementById("imagenes");
-        const totalImagenes = document.querySelectorAll(".imagen").length;
+nextButton.addEventListener('click', () => {
+  index = (index + 1) % images.length;
+  carrusel.style.transform = `translateX(-${index * 100}%)`;
+});
 
-        indiceImagen += direccion;
-
-        if (indiceImagen < 0) {
-            indiceImagen = totalImagenes - 1;
-        } else if (indiceImagen >= totalImagenes) {
-            indiceImagen = 0;
-        }
-
-        const desplazamiento = -indiceImagen * 300; // 300 es el ancho de cada imagen
-        imagenes.style.transform = `translateX(${desplazamiento}px)`;
-    }
-
+prevButton.addEventListener('click', () => {
+  index = (index - 1 + images.length) % images.length;
+  carrusel.style.transform = `translateX(-${index * 100}%)`;
+});
 
 //formulario:
 document.getElementById('contactForm').addEventListener('submit', function(event) {
