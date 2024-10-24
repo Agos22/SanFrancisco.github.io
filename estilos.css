@@ -37,22 +37,22 @@ h2 {
     margin: 20px 0;
     position: relative;
     overflow: hidden;
-    border-radius: 10px; /* Esquinas redondeadas opcionales */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    border-radius: 10px; /* Esquinas redondeadas*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 1200px;
 }
 
 .imagenes {
     display: flex;
-    overflow: hidden;
     transition: transform 0.5s ease;
-    width: 900px; /* 3 imágenes de 300px */
+    width: 900px; 
 }
 
 .imagen {
     min-width: 100%;
-    transition: transform 0.5s ease;
 
 }
+ 
 .boton {
     position: absolute;
     top: 50%;
@@ -62,11 +62,9 @@ h2 {
     cursor: pointer;
     padding: 10px;
 }
-
 .anterior {
     left: 10px;
 }
-
 .siguiente {
     right: 10px;
 }
