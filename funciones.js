@@ -1,30 +1,20 @@
-const images = ["imagenes/imagen1.jpg", "imagenes/imagen2.jpg","imagenes/imagen3.jpg"];
-let currentIndex = 0;
+let indiceImagen = 0;
 
-const carouselImage = document.getElementById("carousel");
-const prevButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
+    function cambiarImagen(direccion) {
+        const imagenes = document.getElementById("imagenes");
+        const totalImagenes = document.querySelectorAll(".imagen").length;
 
-nextButton.addEventListener("click", function(){
-nextImage();
-});
+        indiceImagen += direccion;
 
-prevButton.addEventListener("click", function(){
-prevImage();
-})
+        if (indiceImagen < 0) {
+            indiceImagen = totalImagenes - 1;
+        } else if (indiceImagen >= totalImagenes) {
+            indiceImagen = 0;
+        }
 
-function updateImage (){
-  carouselImage.src = images[currentIndex];
-}
-function nextImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateImage();
-}
-function prevImage() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateImage();
-}
-updateImage();
+        const desplazamiento = -indiceImagen * 300; // 300 es el ancho de cada imagen
+        imagenes.style.transform = `translateX(${desplazamiento}px)`;
+    }
 
 
 //formulario:
