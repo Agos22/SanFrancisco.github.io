@@ -53,3 +53,19 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       formOutput.appendChild(successMessage);
     }
   });
+
+document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío tradicional del formulario
+    const opinion = document.getElementById('opiT').value;
+
+    // Muestra un mensaje de agradecimiento
+    document.querySelector('.feedback').textContent = '¡Gracias por tu opinión!';
+    document.getElementById('opiT').value = ''; // Limpia el área de texto
+
+    // Muestra la opinión debajo del formulario
+    const resultDiv = document.getElementById('result');
+    const feedbackItem = document.createElement('p');
+    feedbackItem.textContent = opinion;
+    resultDiv.appendChild(feedbackItem);
+
+  });
