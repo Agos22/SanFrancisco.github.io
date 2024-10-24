@@ -14,13 +14,17 @@
     </nav>
     <h1>Bienvenidos a San Francisco del Monte de Oro</h1>
     <h2>El Paraiso en San Luis</h2>
-    <div id="carousel">
-        <button id="prev"> Anterior </button>
-        <img id="carouselImage" src="imagenes/imagen1.jpg" alt="imagenes carrusel">
-        <img id="carouselImage" src="imagenes/imagen2.jpg" alt="Imagen del carrusel2">
-        <img id="carouselImage" src="imagenes/imagen3.jpg" alt="Imagen del carrusel3">
-        <button id="next"> Siguiente </button>
+
+    <div class="carrusel">
+      <div class="imagenes" id="imagenes">
+          <img class="imagen" src="imagenes/imagen1.jpg" alt="Imagen 1">
+          <img class="imagen" src="imagenes/imagen2.jpg" alt="Imagen 2">
+          <img class="imagen" src="imagenes/imagen3.jpg" alt="Imagen 3">
+      </div>
+      <button class="boton anterior" onclick="cambiarImagen(-1)">&#10094;</button>
+      <button class="boton siguiente" onclick="cambiarImagen(1)">&#10095;</button>
     </div>
+    
     <script src="funciones.js"></script>
 </body>
 <footer>
