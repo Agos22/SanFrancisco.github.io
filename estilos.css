@@ -37,7 +37,6 @@ h2 {
     margin: 20px 0;
     position: relative;
     overflow: hidden;
-    border: 2px solid #ccc; /* Borde opcional */
     border-radius: 10px; /* Esquinas redondeadas opcionales */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
@@ -94,7 +93,6 @@ ul{
     align-items: center;
     overflow: hidden;
     margin: 20px; /* para un poco de espacio alrededor */
-    border: 2px solid #ccc; /* Borde */
     border-radius: 10px; /* Esquinas redondeadas*/
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
 }
