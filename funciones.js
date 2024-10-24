@@ -1,4 +1,4 @@
-const images = ["imagenes/imagen1.jpg", "imagenes/imagen2.jpg","imagenes/imagen3.jpg", "imagenes/imagen4.jpg" ];
+const images = ["imagenes/imagen1.jpg", "imagenes/imagen2.jpg","imagenes/imagen3.jpg"];
 let currentIndex = 0;
 
 const carouselImage = document.getElementById("carousel");
