@@ -1,7 +1,6 @@
 const images = ["imagenes/imagen1.jpg", "imagenes/imagen2.jpg","imagenes/imagen3.jpg", "imagenes/imagen4.jpg" ];
 let currentIndex = 0;
 
-
 const carouselImage = document.getElementById("carousel");
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
@@ -9,7 +8,6 @@ const nextButton = document.getElementById("next");
 nextButton.addEventListener("click", function(){
 nextImage();
 });
-
 
 prevButton.addEventListener("click", function(){
 prevImage();
@@ -26,8 +24,9 @@ function prevImage() {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
   updateImage();
 }
-
 updateImage();
+
+
 //formulario:
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
