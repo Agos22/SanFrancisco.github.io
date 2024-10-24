@@ -55,17 +55,19 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   });
 
 document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita el envío tradicional del formulario
+    event.preventDefault(); 
     const opinion = document.getElementById('opiT').value;
 
     // Muestra un mensaje de agradecimiento
     document.querySelector('.feedback').textContent = '¡Gracias por tu opinión!';
-    document.getElementById('opiT').value = ''; // Limpia el área de texto
+    document.getElementById('opiT').value = ''; 
 
-    // Muestra la opinión debajo del formulario
+  // Muestra todas las opiniones debajo del formulario
     const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = ''; // Limpia opiniones anteriores
+    feedbackList.forEach(function(feedback) {
     const feedbackItem = document.createElement('p');
-    feedbackItem.textContent = opinion;
+    feedbackItem.textContent = feedback;
     resultDiv.appendChild(feedbackItem);
-
   });
+
