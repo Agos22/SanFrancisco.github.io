@@ -2,6 +2,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta la altura del body para ocupar toda la ventana */
 }
 
 .nav {
@@ -54,27 +58,25 @@ p {
     justify-content: center;
 }
 
-img {
+.img {
     width: 500px;
     height: auto;
     margin: 0 10px;
 }
 
-.content ::after {
+.content {
     display: flex;
-    content: "";
-    clear: both;
-
+    justify-content: space-around; /* Distribuir el espacio uniformemente */
+    padding: 20px;
 }
 
 .column {
-    flex: 1;
-    padding: 20px;
-    border: 1px solid #ccc;
+    flex: 1; /* Cada columna toma el mismo espacio disponible */
     margin: 10px;
-    float: left;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
-
 
 form {
     background-color: #90ff86;
