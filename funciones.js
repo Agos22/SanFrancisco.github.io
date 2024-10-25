@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 const carrusel = document.querySelector('.imagenes');
 const images = document.querySelectorAll('.imagen');
 const prevButton = document.querySelector('.anterior');
@@ -53,24 +54,22 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       formOutput.appendChild(successMessage);
     }
   });
-  
-//Funcion de  opinion
-  document.getElementById("formOpi").addEventListener('submit',function (event){
-    event.preventDefault();
-    const mensaje = document.getElementById("opiT").value;
-
-    document.getElementById("tuOpinion").textContent = mensaje;
-//Mensaje de Agradecimiento
-    const feedback = document.querySelector(".feedback");
-if(feedback){
-  feedback.textContent = "¡Gracias por tu Opinion!"
 }
+//Funcion de  opinion
+ document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío tradicional del formulario
+    const opinion = document.getElementById('opiT').value;
 
-document.getElementById("opiT").value = "";
+    // Muestra un mensaje de agradecimiento
+  document.querySelector('.feedback').textContent = '¡Gracias por tu opinión!';
+  document.getElementById('opiT').value = ''; // Limpia el área de texto
 
+    // Muestra la opinión debajo del formulario
+    const resultDiv = document.getElementById('result');
+    const feedbackItem = document.createElement('p');
+    feedbackItem.textContent = opinion;
+    resultDiv.appendChild(feedbackItem);
 
-});
-
-
-   
+  });
+});  
 
