@@ -25,7 +25,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     let errors = [];
     
     if (name.length === 0 || name.length < 5) {
-      errors.push('El nombre es obligatorio y debe tener menos de 5 caracteres.');
+      errors.push('El nombre es obligatorio y debe tener al menos de 5 caracteres.');
     }
     
     const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
@@ -53,21 +53,24 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       formOutput.appendChild(successMessage);
     }
   });
+  
+//Funcion de  opinion
+  document.getElementById("formOpi").addEventListener('submit',function (event){
+    event.preventDefault();
+    const mensaje = document.getElementById("opiT").value;
 
-document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    const opinion = document.getElementById('opiT').value;
+    document.getElementById("tuOpinion").textContent = mensaje;
+//Mensaje de Agradecimiento
+    const feedback = document.querySelector(".feedback");
+if(feedback){
+  feedback.textContent = "¡Gracias por tu Opinion!"
+}
 
-    // Muestra un mensaje de agradecimiento
-    document.querySelector('.feedback').textContent = '¡Gracias por tu opinión!';
-    document.getElementById('opiT').value = ''; 
+document.getElementById("opiT").value = "";
 
-  // Muestra todas las opiniones debajo del formulario
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = ''; // Limpia opiniones anteriores
-    feedbackList.forEach(function(feedback) {
-    const feedbackItem = document.createElement('p');
-    feedbackItem.textContent = feedback;
-    resultDiv.appendChild(feedbackItem);
-  });
+
+});
+
+
+   
 
