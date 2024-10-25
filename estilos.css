@@ -195,10 +195,14 @@ footer {
   }
 
 .feedback {
-      margin-top: 10px;
-      font-size: 18px;
-      color: black;
+    margin-top: 10px;
+    font-size: 35px;
+    color: black;
+    background-color:rgba(113, 255, 168, 0.904);
+    padding: 10px;
+    border-radius: 5px;
   }
+
 #result p {
       border: 1px solid black;
       padding: 10px;
