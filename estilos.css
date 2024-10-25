@@ -188,20 +188,19 @@ footer {
     color: #ff6347; /* Cambia el color al pasar el mouse */
   }
 
-  .header{
+.header{
     background-color: #90ff86;
     padding: auto;
     text-align: center;
   }
 
- .feedback {
-    margin-top: 10px;
-    font-size: 18px;
-    color: green;
+.feedback {
+      margin-top: 10px;
+      font-size: 18px;
+      color: black;
   }
-
-  #result p {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 5px 0;
-  }
+#result p {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 5px 0;
+    }
