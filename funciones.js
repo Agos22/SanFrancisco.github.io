@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
 const carrusel = document.querySelector('.imagenes');
 const images = document.querySelectorAll('.imagen');
 const prevButton = document.querySelector('.anterior');
@@ -54,7 +53,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       formOutput.appendChild(successMessage);
     }
   });
-}
+
 //Funcion de  opinion
  document.getElementById('feedbackForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita el envío tradicional del formulario
