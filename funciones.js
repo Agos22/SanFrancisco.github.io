@@ -19,45 +19,51 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Formulario de contacto
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
 
-      let errors = [];
-      if (name.length === 0 || name.length < 5) {
-        errors.push('El nombre es obligatorio y debe tener al menos 5 caracteres.');
-      }
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
 
-      const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-      if (!emailPattern.test(email)) {
-        errors.push('El email no es válido.');
-      }
+    const email = document.getElementById('email').value;
+    const telefono = document.getElementById('telefono').value;
+    const mensaje = document.getElementById('mensaje').value;
 
-      const phonePattern = /^\d{10}$/;
-      if (!phonePattern.test(phone)) {
-        errors.push('El teléfono debe tener 10 dígitos.');
-      }
+    const errores = [];
 
-      const formOutput = document.getElementById('formOutput');
-      formOutput.innerHTML = '';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        errores.push('El correo electrónico no es válido.');
+    }
 
-      if (errors.length > 0) {
-        errors.forEach(error => {
-          const errorElement = document.createElement('p');
-          errorElement.textContent = error;
-          formOutput.appendChild(errorElement);
-        });
-      } else {
-        const successMessage = document.createElement('p');
-        successMessage.textContent = `Nombre: ${name}, Email: ${email}, Teléfono: ${phone}`;
-        formOutput.appendChild(successMessage);
-      }
+    const telefonoRegex = /^[0-9]{7,15}$/;
+    if (!telefonoRegex.test(telefono)) {
+        errores.push('El número de teléfono no es válido.');
+    }
+
+    if (mensaje.length < 10) {
+        errores.push('El mensaje debe tener al menos 10 caracteres.');
+    }
+
+    if (errores.length > 0) {
+        mostrarErrores(errores); 
+        document.getElementById('resultado').innerHTML = ''; 
+    } else {
+        mostrarResultado(email, telefono, mensaje); 
+        document.getElementById('errores').innerHTML = ''; 
+        document.getElementById('contactForm').reset();
+    }
+});
+
+function mostrarErrores(errores) {
+    const divErrores = document.getElementById('errores');
+    divErrores.innerHTML = ''; 
+
+    errores.forEach(error => {
+        const p = document.createElement('p');
+        p.textContent = error;
+        p.style.color = 'red'; 
+        divErrores.appendChild(p);
     });
-  }
+}
 
   // Formulario de opiniones
   const feedbackForm = document.getElementById('feedbackForm');
