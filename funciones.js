@@ -1,22 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Carrusel
-  const carrusel = document.querySelector('.imagenes');
-  const images = document.querySelectorAll('.imagen');
-  const prevButton = document.querySelector('.anterior');
-  const nextButton = document.querySelector('.siguiente');
-  let index = 0;
+  const imagenes = [
+    'imagenes/imagen1.jpg',
+    'imagenes/imagen2.jpg',
+    'imagenes/imagen3.jpg'
+  ];
+  let indiceActual = 0;
 
-  if (prevButton && nextButton && carrusel && images.length) {
-    nextButton.addEventListener('click', () => {
-      index = (index + 1) % images.length;
-      carrusel.style.transform = `translateX(-${index * 100}%)`;
-    });
+  const imgElemento = document.querySelector('#carruselImagen');
 
-    prevButton.addEventListener('click', () => {
-      index = (index - 1 + images.length) % images.length;
-      carrusel.style.transform = `translateX(-${index * 100}%)`;
-    });
-  }
+
+  function showImage (){
+    imgElemento.src = imagenes[currentIndex];
+  } 
+//funcion de la imagen siguiente:
+  function nextImage(){
+    currentIndex = (currentIndex + 1) % imagenes.length;
+    showImage();}
+// funcion para la imagen anterior:
+    function prevImage(){
+      currentIndex = (currentIndex - 1 + imagenes.length) % imagenes.length;
+    showImage();}
+    
+
+    showImage();
+
 
   // Formulario de contacto
   const contactForm = document.getElementById('contactForm');
