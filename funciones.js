@@ -32,46 +32,46 @@ mostrarImagen();
 
 document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); 
     
-    const nombre = document.getElementById('nombre').value;  
-    const email = document.getElementById('email').value; 
-    const telefono = document.getElementById('telefono').value; 
-    
-    const errores = []; 
-    
-    if (nombre.length < 6) { 
-      errores.push('El nombre debe de tener al menos 6 caracteres.'); 
-    } 
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-    if (!emailRegex.test(email)) { errores.push('El correo electrónico no es válido.'); 
-    } 
+  const nombre = document.getElementById('nombre').value;  
+  const email = document.getElementById('email').value; 
+  const telefono = document.getElementById('telefono').value; 
+  
+  const errores = []; 
+  
+  if (nombre.length < 6) { 
+    errores.push('El nombre debe de tener al menos 6 caracteres.'); 
+  } 
+  
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+  if (!emailRegex.test(email)) { errores.push('El correo electrónico no es válido.'); 
+  } 
 
-    const telefonoRegex = /^[0-9]{7,15}$/; 
-    if (!telefonoRegex.test(telefono)) { 
-      errores.push('El número de teléfono no es válido.'); 
-    } 
-    
-    
-    if (errores.length > 0) { 
-      mostrarErrores(errores); 
-      document.getElementById('resultado').innerHTML = ''; 
-    } else { 
-      mostrarResultado(nombre, email, telefono); 
-      document.getElementById('errores').innerHTML = ''; 
-      document.getElementById('contactForm').reset(); 
-    } 
-  });
+  const telefonoRegex = /^[0-9]{7,15}$/; 
+  if (!telefonoRegex.test(telefono)) { 
+    errores.push('El número de teléfono no es válido.'); 
+  } 
+  
+  
+  if (errores.length > 0) { 
+    mostrarErrores(errores); 
+    document.getElementById('resultado').innerHTML = ''; 
+  } else { 
+    mostrarResultado(nombre, email, telefono); 
+    document.getElementById('errores').innerHTML = ''; 
+    document.getElementById('contactForm').reset(); 
+  } 
+});
 
 function mostrarErrores(errores) {
-    const divErrores = document.getElementById('errores');
-    divErrores.innerHTML = ''; 
+  const divErrores = document.getElementById('errores');
+  divErrores.innerHTML = ''; 
 
-    errores.forEach(error => {
-        const p = document.createElement('p');
-        p.textContent = error;
-        p.style.color = 'red'; 
-        divErrores.appendChild(p);
-    });
+  errores.forEach(error => {
+      const p = document.createElement('p');
+      p.textContent = error;
+      p.style.color = 'red'; 
+      divErrores.appendChild(p);
+  });
 }
 
 function mostrarResultado(nombre, email, telefono) {
@@ -85,18 +85,17 @@ function mostrarResultado(nombre, email, telefono) {
   const pEmail = document.createElement('p');
   pEmail.textContent = `Correo: ${email}`;
   pEmail.style.color = 'black';
-  
+
   const pTelefono = document.createElement('p');
   pTelefono.textContent = `Teléfono: ${telefono}`;
   pTelefono.style.color = 'black';
-  
-  
+
+
   resultadoDiv.appendChild(pNombre);
   resultadoDiv.appendChild(pEmail);
   resultadoDiv.appendChild(pTelefono);
-  
-}
 
+}
   // Formulario de opiniones
   const feedbackForm = document.getElementById('feedbackForm');
   if (feedbackForm) {
