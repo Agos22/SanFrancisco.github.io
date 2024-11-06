@@ -195,6 +195,7 @@ footer {
   }
 
 .feedback {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 10px;
     font-size: 35px;
     color: black;
@@ -204,8 +205,25 @@ footer {
   }
 
 #result p {
-    border: 1px solid black;
     background-color: #4CAF50;
     padding: 10px;
     margin: 5px 0;
 }
+
+#resultado p {
+    background-color: #4CAF50;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+#errores {
+    color: red;
+    background-color: #4CAF50;
+    text-align: left;
+    margin-top: 10px;
+}
+
+#errores p {
+    margin: 5px 0;
+}
+
