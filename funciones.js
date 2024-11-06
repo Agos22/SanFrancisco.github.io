@@ -10,21 +10,23 @@ let indiceActual = 0;
 const imgElemento = document.querySelector('#carruselImagen');
 
 function showImage (){
-    imgElemento.src = imagenes[currentIndex];
-  } 
+    imgElemento.src = imagenes[indiceActual];
+} 
 //funcion de la imagen siguiente:
 function nextImage(){
-    currentIndex = (currentIndex + 1) % imagenes.length;
-    showImage();}
+    indiceActual = (indiceActual + 1) % imagenes.length;
+    mostrarImagen();
+}
 // funcion para la imagen anterior:
 function prevImage(){
-    currentIndex = (currentIndex - 1 + imagenes.length) % imagenes.length;
-    showImage();}
-document.querySelector('.siguiente').addEventListener('click', avanzar);
-document.querySelector('.anterior').addEventListener('click', retroceder);
+    indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+    mostrarImagen();
+}
+document.querySelector('.siguiente').addEventListener('click', nextImage);
+document.querySelector('.anterior').addEventListener('click', prevImage);
 
 // Inicializa mostrando la primera imagen
-showImage();
+mostrarImagen();
 
 // Formulario de contacto
 
@@ -48,7 +50,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) { 
     if (!telefonoRegex.test(telefono)) { 
       errores.push('El número de teléfono no es válido.'); 
     } 
-    
     
     if (errores.length > 0) { 
       mostrarErrores(errores); 
@@ -102,7 +103,8 @@ function mostrarResultado(nombre, email, telefono) {
       event.preventDefault();
       const opinion = document.getElementById('opiT').value;
       
-      if (opinion.length === 0) { alert('Por favor, ingresa una opinión antes de enviar.'); 
+      if (opinion.length === 0) { 
+        alert('Por favor, ingresa una opinión antes de enviar.'); 
         return; // Salir si la funcion esta vacia
       }
 
