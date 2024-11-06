@@ -47,12 +47,12 @@ h2 {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 15px; 
+    border-radius: 25px; 
     overflow: hidden;
 }
 
 .carrousel-imagenes img { 
-    border-radius: 15px; 
+    border-radius: 25px; 
     width: 100%; 
     height: auto; 
     object-fit: cover; 
@@ -107,7 +107,7 @@ ul{
     align-items: center;
     overflow: hidden;
     margin: 20px; 
-    border-radius: 10px; 
+    border-radius: 20px; 
 }
 
 .imagenart img {
