@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Carrusel
-  const imagenes = [
+const imagenes = [
     'imagenes/imagen1.jpg',
     'imagenes/imagen2.jpg',
     'imagenes/imagen3.jpg'
-  ];
-  let indiceActual = 0;
+];
+let indiceActual = 0;
 
-  const imgElemento = document.querySelector('#carruselImagen');
+const imgElemento = document.querySelector('#carruselImagen');
 
-  function showImage (){
+function showImage (){
     imgElemento.src = imagenes[currentIndex];
   } 
 //funcion de la imagen siguiente:
-  function nextImage(){
+function nextImage(){
     currentIndex = (currentIndex + 1) % imagenes.length;
     showImage();}
 // funcion para la imagen anterior:
-    function prevImage(){
-      currentIndex = (currentIndex - 1 + imagenes.length) % imagenes.length;
+function prevImage(){
+    currentIndex = (currentIndex - 1 + imagenes.length) % imagenes.length;
     showImage();}
 document.querySelector('.siguiente').addEventListener('click', avanzar);
 document.querySelector('.anterior').addEventListener('click', retroceder);
@@ -26,7 +26,8 @@ document.querySelector('.anterior').addEventListener('click', retroceder);
 // Inicializa mostrando la primera imagen
 showImage();
 
-  // Formulario de contacto
+// Formulario de contacto
+
 document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); 
     
     const nombre = document.getElementById('nombre').value;  
@@ -93,7 +94,7 @@ function mostrarResultado(nombre, email, telefono) {
   resultadoDiv.appendChild(pTelefono);
   
 }
-  
+
   // Formulario de opiniones
   const feedbackForm = document.getElementById('feedbackForm');
   if (feedbackForm) {
@@ -119,5 +120,6 @@ function mostrarResultado(nombre, email, telefono) {
       resultDiv.appendChild(feedbackItem);
     });
   }
+});
 
- 
+
