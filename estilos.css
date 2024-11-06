@@ -40,17 +40,6 @@ h2 {
     font-size:xx-large;
 }
 
-.carrusel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px; /* Esquinas redondeadas*/
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    width: 1200px;
-}
 .carrousel-imagenes {
     display: flex;
     width: 100%;
@@ -58,22 +47,37 @@ h2 {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 15px; 
+    overflow: hidden;
 }
 
+.carrousel-imagenes img { 
+    border-radius: 15px; 
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+}
+.boton-container { 
+    display:flex; 
+    justify-content: center; 
+    margin-top: 10px;
+}
 .imagen {
     min-width: 100%;
-
 }
  
 .boton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7);
-    border: none;
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    border: none; 
+    padding: 10px; 
     cursor: pointer;
-    padding: 10px;
+    align-items: center;
 }
+
 .anterior {
     left: 10px;
 }
@@ -102,9 +106,8 @@ ul{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin: 20px; /* para un poco de espacio alrededor */
-    border-radius: 10px; /* Esquinas redondeadas*/
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin: 20px; 
+    border-radius: 10px; 
 }
 
 .imagenart img {
