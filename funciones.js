@@ -119,5 +119,5 @@ function mostrarResultado(nombre, email, telefono) {
       resultDiv.appendChild(feedbackItem);
     });
   }
-});
+
  
