@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const imgElemento = document.querySelector('#carruselImagen');
 
-
   function showImage (){
     imgElemento.src = imagenes[currentIndex];
   } 
@@ -21,10 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function prevImage(){
       currentIndex = (currentIndex - 1 + imagenes.length) % imagenes.length;
     showImage();}
-    
+document.querySelector('.siguiente').addEventListener('click', avanzar);
+document.querySelector('.anterior').addEventListener('click', retroceder);
 
-    showImage();
-
+// Inicializa mostrando la primera imagen
+showImage();
 
   // Formulario de contacto
 document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); 
