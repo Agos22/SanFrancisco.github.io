@@ -51,6 +51,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) { 
       errores.push('El número de teléfono no es válido.'); 
     } 
     
+    
     if (errores.length > 0) { 
       mostrarErrores(errores); 
       document.getElementById('resultado').innerHTML = ''; 
@@ -103,8 +104,7 @@ function mostrarResultado(nombre, email, telefono) {
       event.preventDefault();
       const opinion = document.getElementById('opiT').value;
       
-      if (opinion.length === 0) { 
-        alert('Por favor, ingresa una opinión antes de enviar.'); 
+      if (opinion.length === 0) { alert('Por favor, ingresa una opinión antes de enviar.'); 
         return; // Salir si la funcion esta vacia
       }
 
@@ -123,5 +123,4 @@ function mostrarResultado(nombre, email, telefono) {
     });
   }
 });
-
 
