@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+
   // Carrusel
 const imagenes = [
     'imagenes/imagen1.jpg',
@@ -7,23 +7,23 @@ const imagenes = [
 ];
 let indiceActual = 0;
 
-const imgElemento = document.querySelector('#carruselImagen');
+const imagenElemento = document.querySelector('.carrousel-imagenes');
 
-function showImage (){
-    imgElemento.src = imagenes[indiceActual];
-} 
+function mostrarImagen() {
+  imagenElemento.style.backgroundImage = `url(${imagenes[indiceActual]})`;
+}
 //funcion de la imagen siguiente:
-function nextImage(){
+function avanzar(){
     indiceActual = (indiceActual + 1) % imagenes.length;
     mostrarImagen();
 }
 // funcion para la imagen anterior:
-function prevImage(){
+function retroceder(){
     indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
     mostrarImagen();
 }
-document.querySelector('.siguiente').addEventListener('click', nextImage);
-document.querySelector('.anterior').addEventListener('click', prevImage);
+document.querySelector('.siguiente').addEventListener('click', avanzar);
+document.querySelector('.anterior').addEventListener('click', retroceder);
 
 // Inicializa mostrando la primera imagen
 mostrarImagen();
